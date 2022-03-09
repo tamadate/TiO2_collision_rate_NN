@@ -62,6 +62,12 @@ class TiO2:
                 beta+=length*TiO2.db*TiO2.dv
         return beta*1e-20
 
+    def NtoD(self,N):
+        return 10.0*(N/48.0)**0.33333
+
+    def DtoN(self,D):
+        return (D/10.0)**3*48.0
+
 
 
 
