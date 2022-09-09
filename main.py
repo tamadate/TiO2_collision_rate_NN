@@ -21,17 +21,16 @@ axNormal(axs)
 
 ##------------------------------------------------
 
-calculator=TiO2NN.TiO2()
+calculator=TiO2NN.TiO2()    # generate class
 
-ddp=1
-T=300
-dp1s=np.arange(1,30,ddp)
-with open(str(int(T))+".dat", "w") as f:
-    for dp1 in dp1s:
-        for dp2 in np.arange(dp1,30,ddp):
-            n1=calculator.DtoN(dp1)
-            n2=calculator.DtoN(dp2)
-            beta=calculator.calculateBetaNN(n1,n2,T)
-            f.write(str(beta*1e14)+"\t")
-        f.write("\n")
+ddp=1   # Step of cluster size [angstrom]
+T=300   # Temperature
+f=open(str(int(T))+".dat", "w")     # output file
+for dp1 in np.arange(1,30,ddp):         # 1st cluster loop
+    for dp2 in np.arange(dp1,30,ddp):   # 2nd cluster loop
+        n1=calculator.DtoN(dp1)         # dp to N (1st cluster)
+        n2=calculator.DtoN(dp2)         # dp to N (2nd cluster)
+        beta=calculator.calculateBetaNN(n1,n2,T)    # main calculation
+        f.write(str(beta*1e14)+"\t")
+    f.write("\n")
 f.close()
