@@ -3,7 +3,7 @@
 This code is utilized to estimate gas phase TiO2 nanoclusters (less than 3nm) collision rate coeffcient (or collision kernel) at arbitrary temperature using neural network (NN).  The code is fully writen by Python3 which PyTorch is used as a NN library. The training data of this NN was generated from the molecular dynamics (MD) simulation with varying particle diameters, initial particle velocities, and collision parameter.  This type of collision rate coefficient calculation procedure with MD simulation is discussed in this paper [Goudeli et al., 2020](https://www.sciencedirect.com/science/article/pii/S0021850220300471?via%3Dihub) and some other papers as well.  Our paper related to this simulation is under prepearation and it will be avairable the generation process of training data with MD simulation, detail of the neural network, and validation of the neural nerwork in that paper.
 ## Usage
 ### 1. Collsion probability mapping calculation
-A script `maiiping.py` is used for this collision probability calculation mode and it estimates the collision probability of two nanoclusters from three inputs: reaction temperature and diameters of clusters. As a example, calculation result of 1.0 nm - 1.0 nm particles collision at 300 K is shown in Figure 1.
+A script `maiiping.py` is used for this collision probability calculation mode and it estimates the collision probability of two nanoclusters from three inputs: reaction temperature $\it T$ and diameters of clusters $\it {D}$$_{p,1}$ and $\it{D}$$_{p,2}$. As a example, 1.0 nm - 1.0 nm particles collision calculation result is shown in Figure 1.
 ### 2. Collsion kernel mapping calculation
 # Author
 * Dr. Tomoya Tamadate
