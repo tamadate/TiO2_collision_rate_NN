@@ -36,7 +36,9 @@ print("beta="+str(beta*1e-20)+"[m3/s]")
 
 ## Plotting results
 b,v=np.meshgrid(calculator.barray,calculator.varray)
-axs.set_ylabel("Initial velocity [m/s]",size=15)
-axs.set_xlabel("Collision parameter [$\AA$]",size=15)
+axs.set_ylabel("Initial velocity, $\it v_0$ [m/s]",size=15)
+axs.set_xlabel(r'Collision parameter, $\it b$ [$\rm{\AA}$]',size=15)
 axs.contourf(b,v,calculator.ps)
+axs.text(100, 900, r'$\beta = {:.2f}$'.format(beta*1e15)+r'$ \times 10^{-15}$ m$^3$/s', fontsize = 12, color="white")
+plt.savefig("probabilityMap.png", dpi=1000)
 plt.show()
