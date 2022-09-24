@@ -25,9 +25,9 @@ axNormal(axs)
 
 calculator=TiO2NN.TiO2() # generate class
 
-T=300       # temperature
-dp1=15      # 1st TiO2 cluster diameter in angstrom
-dp2=20      # 2nd TiO2 cluster diameter in angstrom
+T=1200       # temperature
+dp1=10      # 1st TiO2 cluster diameter in angstrom
+dp2=18      # 2nd TiO2 cluster diameter in angstrom
 
 n1=calculator.DtoN(dp1) # translation from particle diameter to cluster number
 n2=calculator.DtoN(dp2) # translation from particle diameter to cluster number

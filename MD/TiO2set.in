@@ -1,0 +1,24 @@
+units		metal
+atom_style	charge
+dimension       3
+boundary        p p p
+
+read_data  	TiO2
+
+mass		1 47.867
+mass		2 16.00
+
+pair_style	buck/coul/cut 20
+pair_coeff	1 1 31120.4 0.154 5.247
+pair_coeff	1 2 16957.7 0.194 12.593
+pair_coeff	2 2 11782.8 0.234 30.222
+
+timestep        0.00001
+
+fix		1 all nvt temp 300.0 300.0 0.01
+thermo      	100
+
+dump		1 all custom 100 interData.dump id type q x y z vx vy vz
+
+velocity	all create 300.1 2398378
+run  		1

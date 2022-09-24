@@ -37,6 +37,7 @@ class TiO2:
     bmin=0
     Nb=100
     Nv=100
+    mij=-1
     db=(bmax-bmin)/Nb
     dv=(vmax-vmin)/Nv
     dbdv=db*dv
@@ -51,9 +52,9 @@ class TiO2:
     def calculateBetaNN(self,n1,n2,T):
         n=np.array((n1,n2))
         m=n/3.0*self.Mmono				# Molar mass of clusters [kg/mol]
-        mij=m[0]*m[1]/(m[0]+m[1])		# Reduced molar mass [kg/mol]
-        mijxtwoRT_inv=mij/(self.R*T*2.0)# coefficient
-        coeff=(mij*0.5/np.pi/T/self.R)**1.5*8*np.pi*np.pi
+        self.mij=m[0]*m[1]/(m[0]+m[1])		# Reduced molar mass [kg/mol]
+        mijxtwoRT_inv=self.mij/(self.R*T*2.0)# coefficient
+        coeff=(self.mij*0.5/np.pi/T/self.R)**1.5*8*np.pi*np.pi
         beta=0
         ib=0
         for b in self.barray:
