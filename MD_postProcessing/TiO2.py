@@ -42,9 +42,14 @@ class TiO2():
             self.n1=7
         if(size==3):
             self.n1=0
+        if(size==4):
+            self.n1=12
 
     def mapping(self):
         for n2 in np.arange(self.Nsize):
+            if(self.n1==12):
+                if (n2!=12 and n2!=0 and n2!=7 and n2!=2):
+                    continue
             n=np.array((self.ns[self.n1],self.ns[n2]))       # [Ni,Nj]
             for dirname in glob.glob(self.loc+str(self.dpString[self.n1])+str(self.dpString[n2])+"*/"):
                 for iv in np.arange(self.nvs):

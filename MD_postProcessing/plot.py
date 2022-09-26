@@ -4,6 +4,7 @@ import TiO2
 
 
 class plot():
+    saveLoc="/home/tama3rdgen/TiO2/Paper/MDresults/"
 ## --------------   Plotting results   -------------- ##
     def pltNormal(self):
         plt.rcParams['ytick.direction'] = 'in'
@@ -40,7 +41,7 @@ class plot():
         cbar=plt.colorbar(im1, ax=axs[2,3],fraction=0.85,aspect=5,shrink=0.8,pad=2,ticks=np.array([0,0.2,0.4,0.6,0.8,1]))
         fig.text(0.68,0.26,"Probability [-]",va="center",rotation="vertical",size=15)
         fig.text(0.75, 0.25, r"$D_{{\rm p},i}$ = "+MD.dpString[MD.n1], fontsize = 20)
-        plt.savefig(MD.dpString[MD.n1]+"Probability.png", dpi=1000)
+        plt.savefig(self.saveLoc+MD.dpString[MD.n1]+"Probability.png", dpi=1000)
         plt.show()
 #*******************************************************************************
 ## --------------   Flag mapping   -------------- ##
@@ -64,7 +65,7 @@ class plot():
         cbar=plt.colorbar(im1, ax=axs[2,3],fraction=0.85,aspect=5,shrink=0.8,pad=2)
         fig.text(0.68,0.26,"No / Yes",va="center",rotation="vertical",size=15)
         fig.text(0.75, 0.25, r"$D_{{\rm p},i}$ = "+MD.dpString[MD.n1], fontsize = 20)
-        plt.savefig(MD.dpString[MD.n1]+"Flag.png", dpi=1000)
+        plt.savefig(self.saveLoc+MD.dpString[MD.n1]+"Flag.png", dpi=1000)
         plt.show()
 #*******************************************************************************
 ## --------------   Binding length mapping   -------------- ##
@@ -90,7 +91,7 @@ class plot():
         cbar=plt.colorbar(im1, ax=axs[2,3],fraction=0.85,aspect=5,shrink=0.8,pad=2,ticks=np.array([0,0.2,0.4,0.6,0.8,1]))
         fig.text(0.685,0.17,"Normalized\nbinding length [-]",ha="center",rotation="vertical",size=15)
         fig.text(0.75, 0.25, r"$D_{{\rm p},i}$ = "+MD.dpString[MD.n1]+"\n$T$ = "+'{:.0f}'.format(MD.T)+" K", fontsize = 20)
-        plt.savefig(MD.dpString[MD.n1]+"BindingLength"+str(int(MD.T))+".png", dpi=1000)
+        plt.savefig(self.saveLoc+MD.dpString[MD.n1]+"BindingLength"+str(int(MD.T))+".png", dpi=1000)
         plt.show()
 #*******************************************************************************
 ## --------------   Binding length mapping with different temperatures   -------------- ##
@@ -119,7 +120,7 @@ class plot():
         fig.text(0.97,0.22,"Normalized binding length [-]",ha="center",rotation="vertical",size=15)
         cbar_ax = fig.add_axes([0.92, 0.16, 0.01, 0.71])
         fig.colorbar(im, cax=cbar_ax,ticks=np.array([0,0.2,0.4,0.6,0.8,1]))
-        plt.savefig(MD.dpString[MD.n1]+"BLtemp.png", dpi=1000)
+        plt.savefig(self.saveLoc+MD.dpString[MD.n1]+"BLtemp.png", dpi=1000)
         plt.show()
 #*******************************************************************************
 ## --------------   Beta as function of temp.   -------------- ##
@@ -143,7 +144,7 @@ class plot():
         axs.set_ylabel(r"Collision kernel, $\beta _{ij}$ [m$^3$ s$^ {-1}$]",size=15)
         plt.ticklabel_format(style='sci', axis='y', useMathText=True)
         #plt.legend()
-        plt.savefig(MD.dpString[MD.n1]+"Beta.png", dpi=1000)
+        plt.savefig(self.saveLoc+MD.dpString[MD.n1]+"Beta.png", dpi=1000)
         plt.show()
 #*******************************************************************************
 ## --------------   Enhancement facto as function of temp.   -------------- ##
@@ -166,5 +167,5 @@ class plot():
         axs.set_xlabel("Temperature [K]",size=15)
         axs.set_ylabel(r"Enhancement factor, $\eta$ [-]",size=15)
         #plt.legend()
-        plt.savefig(MD.dpString[MD.n1]+"Enhance.png", dpi=1000)
+        plt.savefig(self.saveLoc+MD.dpString[MD.n1]+"Enhance.png", dpi=1000)
         plt.show()

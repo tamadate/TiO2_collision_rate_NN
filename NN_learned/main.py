@@ -28,7 +28,7 @@ axs.w_zaxis.set_major_formatter(niceMathTextForm)
 
 calculator=TiO2NN.TiO2()    # generate class
 
-T=300
+T=1200
 dps=np.arange(5,30,1)
 Ndp=np.size(dps)
 betas=np.zeros((Ndp,Ndp))
@@ -50,7 +50,7 @@ for i in np.arange(Ndp):
 X, Y = np.meshgrid(dps*0.1, dps*0.1)
 #axs.contour3D(X, Y, betas, 50, cmap='binary')
 axs.plot_surface(X, Y, betas, cmap='rainbow', edgecolor='none')
-axs.view_init(40, -100)
+axs.view_init(60, -100)
 plt.savefig("betaMap"+str(int(T))+".png", dpi=1000)
 plt.show()
 
@@ -59,6 +59,6 @@ fig = plt.figure()
 axs = plt.axes(projection='3d')
 axs.w_zaxis.set_major_formatter(niceMathTextForm)
 axs.plot_surface(X, Y, etas, cmap='rainbow', edgecolor='none')
-axs.view_init(40, -100)
+axs.view_init(60, -100)
 plt.savefig("enhanceMap"+str(int(T))+".png", dpi=1000)
 plt.show()

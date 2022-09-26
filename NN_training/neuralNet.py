@@ -16,7 +16,7 @@ import TiO2
 trainInput=np.zeros((0,4))  # [n1,n2,b,v]
 labelInput=np.zeros(0)
 
-for i in np.arange(3):
+for i in np.arange(4):
     MDdata=TiO2.TiO2()
     MDdata.sizeSet(i)
     MDdata.tempSet(1000)
@@ -81,7 +81,7 @@ H = 10	#1st hidden layer dimension
 H2 = 5	#2nd hidden layer dimension
 H3 = 5	#3rd hidden layer dimension
 D_out = 2	#output dimension
-epoch = 200	#number of training
+epoch = 150	#number of training
 
 ##device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 device = torch.device('cpu')
@@ -179,15 +179,15 @@ for i in np.arange(2):
 axs.flat[0].set_title('(a) Train & Test losses',loc="left",size=15)
 axs.flat[0].set_ylabel("Loss [-]",size=15)
 axs.flat[0].set_xlabel('Epoch [-]',size=15)
-axs.flat[0].plot(range(1, epoch+1), train_loss_list, color='blue',linestyle='-', label="Train ($N$ = "+str(len(train_label))+")")
-axs.flat[0].plot(range(1, epoch+1), test_loss_list, color='red', linestyle='--', label="Test ($N$ = "+str(len(test_label))+")")
+axs.flat[0].plot(range(1, epoch+1), train_loss_list, color='black',linestyle='-', label="Train ($N$ = "+str(len(train_label))+")", linewidth=0.8)
+axs.flat[0].plot(range(1, epoch+1), test_loss_list, color='red', linestyle='--', label="Test ($N$ = "+str(len(test_label))+")", linewidth=0.8)
 axs.flat[0].legend(frameon=False)
 
 axs.flat[1].set_title('(b) Train & Test accuracies',loc="left",size=15)
 axs.flat[1].set_ylabel("Accuracy [-]",size=15)
 axs.flat[1].set_xlabel('Epoch [-]',size=15)
-axs.flat[1].plot(range(1, epoch+1), train_accuracy_list, color='blue',linestyle='-', label="Train ($N$ = "+str(len(train_label))+")")
-axs.flat[1].plot(range(1, epoch+1), test_accuracy_list, color='red', linestyle='--', label="Test ($N$ = "+str(len(test_label))+")")
+axs.flat[1].plot(range(1, epoch+1), train_accuracy_list, color='black',linestyle='-', label="Train ($N$ = "+str(len(train_label))+")", linewidth=0.8)
+axs.flat[1].plot(range(1, epoch+1), test_accuracy_list, color='red', linestyle='--', label="Test ($N$ = "+str(len(test_label))+")", linewidth=0.8)
 axs.flat[1].legend(frameon=False)
 
 plt.savefig("NNresult.png", dpi=1000)
