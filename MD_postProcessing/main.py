@@ -9,10 +9,12 @@ MDdata.mapping()
 
 plot=plot.plot()
 
+MDdata.critical()
+
 ## --------------   Analysis   -------------- ##
 #plot.probabilityMap(MDdata)
 #plot.flagMap(MDdata)
 #plot.bindingLengthMap(MDdata,300)
 #plot.BLmappingTemp(MDdata)
-plot.betaTemp(MDdata,200,1600)
-plot.enhanceTemp(MDdata,200,1600)
+#plot.betaTemp(MDdata,200,1600)
+#plot.enhanceTemp(MDdata,200,1600)

@@ -115,3 +115,22 @@ class TiO2():
         betaFM=np.pi*L*L*vmean*1e-18              # nm*nm*m/s
         eta=beta/betaFM
         return eta
+
+    def critical(self):
+        f=open(self.dpString[self.n1]+".dat","w")
+        for n2 in np.arange(self.Nsize):
+            if(self.n1==12):
+                if (n2!=12 and n2!=0 and n2!=7 and n2!=2):
+                    continue
+            ## propability calculation
+            for iv in np.arange(self.nvs):
+                nocoll=0
+                for ib in np.arange(self.nbs):
+                    if(self.pArray[n2][iv][ib]==1.0):
+                        coll=self.bs[ib]
+                    if(self.pArray[n2][iv][ib]==0.0):
+                        nocoll=self.bs[ib]
+                        break
+                if(nocoll!=0):
+                    f.write(str(self.ns[self.n1])+" "+str(self.ns[n2])+" "+str(self.vs[iv])+" "+str((coll+nocoll)*0.5)+"\n")
+                    #bcr=(np.min(nocoll))*0.5
