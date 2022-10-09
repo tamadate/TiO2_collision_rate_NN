@@ -78,8 +78,18 @@ class TiO2():
         n=np.array((self.ns[self.n1],self.ns[n2]))       # [Ni,Nj]
         m=n/3.0*self.MTiO2                     # [mi,mj]
         mij=m[0]*m[1]/(m[0]+m[1])         # 1/mij=1/mi+1/mj
+        self.mij=mij
         coeff=(mij*0.5/np.pi/self.kbT)**1.5*8*np.pi**2
         for iv in np.arange(self.nvs):
+            dv=0.0
+            if iv==0:
+                dv+=10.0
+            else:
+                dv+=(self.vs[iv]-self.vs[iv-1])*0.5
+            if iv==self.nvs-1:
+                dv+=25.0
+            else:
+                dv+=(self.vs[iv+1]-self.vs[iv])*0.5
             for ib in np.arange(self.nbs):
                 self.blArray[n2][iv][ib]=coeff*self.vs[iv]**3*np.exp(-mij*self.vs[iv]**2*0.5/self.kbT)*self.bs[ib]*self.pArray[n2][iv][ib]
 

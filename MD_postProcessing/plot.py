@@ -95,9 +95,9 @@ class plot():
         plt.show()
 #*******************************************************************************
 ## --------------   Binding length mapping with different temperatures   -------------- ##
-    def BLmappingTemp(self,MD):
+    def BLmappingTemp(self,MD,Tmin,Tmax):
         self.pltNormal()
-        fig, axs = plt.subplots(1,4,figsize=(15,5),sharey=True)
+        fig, axs = plt.subplots(2,4,figsize=(15,5),sharey=True,gridspec_kw={'width_ratios': [5, 1, 5, 1]})
         for i in np.arange(4):
         	self.axNormal(axs.flat[i])
         plt.rcParams["font.size"]=12
@@ -105,18 +105,22 @@ class plot():
         fig.text(0.10,0.55,"Initial velocity, $v_0$ [m/s]",va="center",rotation="vertical",size=20)
         figRes=50
         b,v=np.meshgrid(MD.bs*0.1,MD.vs)
-        tempArray=np.array([300,600,900,1200])
+        tempArray=np.linspace(Tmin,Tmax,4)
         Tsize=np.size(tempArray)
         plt.ylim(20,400)
 
-        n2=11
+        n2=12
         for i in np.arange(Tsize):
             MD.tempSet(tempArray[i])
+            print(MD.T)
             MD.BLmapping(n2)
-            axs.flat[i].text(3.5,300,r"$T$ = "+str(int(MD.T))+" K\n"+"$D_{{\\rm p},i}$ = 1 nm" +"\n"+ "$D_{{\\rm p},j}$ = 3 nm",size=15,color="white")
-            axs.flat[i].contourf(b,v,MD.blArray[n2]/np.max(MD.blArray[n2]),figRes,cmap="rainbow")
+            axs.flat[i*2].text(3.5,300,r"$T$ = "+str(int(MD.T))+" K\n"+"$D_{{\\rm p},i}$ = 1 nm" +"\n"+ "$D_{{\\rm p},j}$ = 3 nm",size=15,color="white")
+            axs.flat[i*2].contourf(b,v,MD.blArray[n2]/np.max(MD.blArray[n2]),figRes,cmap="rainbow")
+            axs.flat[i*2+1].plot(MD.blArray[n2].sum(axis=1)*1e-6,v,lineWidth=0.5,c="black")
+            MB=(MD.mij*0.5/np.pi/MD.T/MD.kb)**1.5*4*np.pi*v*v*np.exp(-MD.mij*v*v/MD.T/MD.kb)
+            axs.flat[i*2+1].plot(MB,v,lineWidth=0.5,c="black")
 
-        im=axs.flat[3].contourf(b,v,MD.blArray[n2]/np.max(MD.blArray[n2]),figRes,cmap="rainbow")
+        im=axs.flat[6].contourf(b,v,MD.blArray[n2]/np.max(MD.blArray[n2]),figRes,cmap="rainbow")
         fig.text(0.97,0.22,"Normalized binding length [-]",ha="center",rotation="vertical",size=15)
         cbar_ax = fig.add_axes([0.92, 0.16, 0.01, 0.71])
         fig.colorbar(im, cax=cbar_ax,ticks=np.array([0,0.2,0.4,0.6,0.8,1]))
