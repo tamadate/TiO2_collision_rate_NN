@@ -119,7 +119,7 @@ class TiO2():
     def critical(self):
         f=open(self.dpString[self.n1]+".dat","w")
         for n2 in np.arange(self.Nsize):
-            if(self.n1==12):
+            if(self.n1==11):
                 if (n2!=12 and n2!=0 and n2!=7 and n2!=2):
                     continue
             ## propability calculation
