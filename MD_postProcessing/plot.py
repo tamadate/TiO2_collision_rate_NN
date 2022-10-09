@@ -109,7 +109,7 @@ class plot():
         Tsize=np.size(tempArray)
         plt.ylim(20,400)
 
-        n2=12
+        n2=2
         for i in np.arange(Tsize):
             MD.tempSet(tempArray[i])
             print(MD.T)
