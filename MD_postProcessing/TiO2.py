@@ -83,6 +83,21 @@ class TiO2():
             for ib in np.arange(self.nbs):
                 self.blArray[n2][iv][ib]=coeff*self.vs[iv]**3*np.exp(-mij*self.vs[iv]**2*0.5/self.kbT)*self.bs[ib]*self.pArray[n2][iv][ib]
 
+    def BLmappingHS(self,n2):
+        ## binding length calculation
+        n=np.array((self.ns[self.n1],self.ns[n2]))       # [Ni,Nj]
+        m=n/3.0*self.MTiO2                     # [mi,mj]
+        mij=m[0]*m[1]/(m[0]+m[1])         # 1/mij=1/mi+1/mj
+        coeff=(mij*0.5/np.pi/self.kbT)**1.5*8*np.pi**2
+        collisionLength=(self.dpSize[self.n1]+self.dpSize[n2])*5
+        for iv in np.arange(self.nvs):
+            for ib in np.arange(self.nbs):
+                if(self.bs[ib]>collisionLength):
+                    p=0
+                else:
+                    p=1
+                self.blArray[n2][iv][ib]=coeff*self.vs[iv]**3*np.exp(-mij*self.vs[iv]**2*0.5/self.kbT)*self.bs[ib]*p
+
     def beta(self,n2):
         ## binding length calculation
         n=np.array((self.ns[self.n1],self.ns[n2]))       # [Ni,Nj]
