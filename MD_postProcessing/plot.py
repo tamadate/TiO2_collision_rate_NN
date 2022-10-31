@@ -95,28 +95,32 @@ class plot():
         plt.show()
 #*******************************************************************************
 ## --------------   Binding length mapping with different temperatures   -------------- ##
-    def BLmappingTemp(self,MD):
+    def BLmappingTemp(self,MD,n2):
         self.pltNormal()
-        fig, axs = plt.subplots(1,4,figsize=(15,5),sharey=True)
-        for i in np.arange(4):
+        fig, axs = plt.subplots(1,3,figsize=(15,5),sharey=True)
+        for i in np.arange(3):
         	self.axNormal(axs.flat[i])
         plt.rcParams["font.size"]=12
         fig.text(0.55,0.05,r"Impact parameter, $b$ [nm]",ha="center",size=20)
         fig.text(0.10,0.55,"Initial velocity, $v_0$ [m/s]",va="center",rotation="vertical",size=20)
         figRes=50
         b,v=np.meshgrid(MD.bs*0.1,MD.vs)
-        tempArray=np.array([300,600,900,1200])
+        tempArray=np.array([300,600,900])
         Tsize=np.size(tempArray)
         plt.ylim(20,400)
 
-        n2=11
         for i in np.arange(Tsize):
             MD.tempSet(tempArray[i])
             MD.BLmapping(n2)
-            axs.flat[i].text(3.5,300,r"$T$ = "+str(int(MD.T))+" K\n"+"$D_{{\\rm p},i}$ = 1 nm" +"\n"+ "$D_{{\\rm p},j}$ = 3 nm",size=15,color="white")
+            cbar=MD.meanThermalSpeed(n2)+b[0]*0
+            axs.flat[i].text(4,300,r"$T$ = "+str(int(MD.T))+" K\n"+"$D_{{\\rm p},i}$ = 2.0 nm" +"\n"+ "$D_{{\\rm p},j}$ = 1.8 nm",size=15,color="white")
             axs.flat[i].contourf(b,v,MD.blArray[n2]/np.max(MD.blArray[n2]),figRes,cmap="rainbow")
+            axs.flat[i].plot(b[0],cbar, ls='--', color = 'white')
+            axs.flat[i].axvline(x = (MD.dpSize[MD.n1]+MD.dpSize[n2])*0.5, ls='--', color = 'white')
 
-        im=axs.flat[3].contourf(b,v,MD.blArray[n2]/np.max(MD.blArray[n2]),figRes,cmap="rainbow")
+        im=axs.flat[2].contourf(b,v,MD.blArray[n2]/np.max(MD.blArray[n2]),figRes,cmap="rainbow")
+        #axs.flat[0].text(5,250,r"$\sqrt{\frac{8 k_b T}{\pi m_{ij}}}$",size=18,color="white")
+        #axs.flat[0].text(1.1,600,r"${\frac{D_{{\rm p,}i}+D_{{\rm p,}j}}{2}}$",size=18,color="white")
         fig.text(0.97,0.22,"Normalized binding length [-]",ha="center",rotation="vertical",size=15)
         cbar_ax = fig.add_axes([0.92, 0.16, 0.01, 0.71])
         fig.colorbar(im, cax=cbar_ax,ticks=np.array([0,0.2,0.4,0.6,0.8,1]))
@@ -141,7 +145,7 @@ class plot():
             axs.plot(tempArray,betas,label=str(MD.dpString[n2]),color=cm(n22*0.2+0.2),linewidth=0.8)
         axs.set_xlim([Tlow,Thigh])
         axs.set_xlabel("Temperature [K]",size=15)
-        axs.set_ylabel(r"Collision kernel, $\beta _{ij}$ [m$^3$ s$^ {-1}$]",size=15)
+        axs.set_ylabel(r"Coagulation rate coefficient, $\beta _{ij}$ [m$^3$ s$^ {-1}$]",size=15)
         plt.ticklabel_format(style='sci', axis='y', useMathText=True)
         #plt.legend()
         plt.savefig(self.saveLoc+MD.dpString[MD.n1]+"Beta.png", dpi=1000)
@@ -163,6 +167,7 @@ class plot():
                 MD.tempSet(tempArray[i])
                 etas[i]=MD.eta(n2)
             axs.plot(tempArray,etas,label=str(MD.dpString[n2]),color=cm(n22*0.2+0.2),linewidth=0.8)
+            #axs.plot(tempArray**0.5,(tempArray**0.5-Tlow**0.5)*-1+etas[0],label=str(MD.dpString[n2]),color=cm(n22*0.2+0.2),linewidth=0.8)
         axs.set_xlim([Tlow,Thigh])
         axs.set_xlabel("Temperature [K]",size=15)
         axs.set_ylabel(r"Enhancement factor, $\eta$ [-]",size=15)

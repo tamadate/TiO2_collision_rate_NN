@@ -98,6 +98,12 @@ class TiO2():
                     p=1
                 self.blArray[n2][iv][ib]=coeff*self.vs[iv]**3*np.exp(-mij*self.vs[iv]**2*0.5/self.kbT)*self.bs[ib]*p
 
+    def meanThermalSpeed(self,n2):
+        n=np.array((self.ns[self.n1],self.ns[n2]))       # [Ni,Nj]
+        m=n/3.0*self.MTiO2                     # [mi,mj]
+        mij=m[0]*m[1]/(m[0]+m[1])         # 1/mij=1/mi+1/mj
+        return (8*self.kbT/mij/np.pi)**0.5
+
     def beta(self,n2):
         ## binding length calculation
         n=np.array((self.ns[self.n1],self.ns[n2]))       # [Ni,Nj]
