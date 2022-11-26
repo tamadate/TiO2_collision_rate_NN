@@ -1,3 +1,0 @@
-build LAMMPS this verlet.cpp
-change lines 359 & 360 for setting number of clusters
-change lines 397 & 398 for setting collision distance
