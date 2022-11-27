@@ -5,6 +5,6 @@ NN_learned/MDNN_beta_1500.png
 NN_learned/MDNN_beta_300.png
 NN_learned/MDNN.png
 NN_learned/probabilityMap.png
-.ipynb_checkpoints
+.ipynb_checkpoints/*
 */.ipynb_checkpoints/*
 */__pycache__/*
