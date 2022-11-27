@@ -20,7 +20,7 @@ This code is utilized to estimate gas phase TiO<sub>2</sub> nanoclusters (less t
 * Download or clone this repository.
 
 ## 4. Usage
-Set parameters (temperature, 1st and 2nd clusters diameters) in `main.py` and run `main.py`, displaying the collision rate coefficienct ($\beta_{ij}$ and $\eta_{ij}$) on your console.
+Set parameters (temperature, 1st and 2nd clusters diameters) in `main.py` and run `main.py`, displaying the collision rate coefficienct, $\beta_{ij}$ and $\eta_{ij}$, on your console.
 
 ## 5. Documentation
 **Under construction...**
