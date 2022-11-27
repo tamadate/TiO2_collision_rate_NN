@@ -14,3 +14,5 @@ L=(dpi+dpj)*0.5                             # collision distance [angstrom]
 v0=(8*8.314*T/calculator.mij/np.pi)**0.5    # mean thermal speed [m/s]
 beta0=(L*L*np.pi*v0)*1e20                   # free molecular collision rate coefficient [m3/s]
 eta=beta/beta0                              # enhancement factor [-]
+
+print(str(beta)+" "+str(eta))
