@@ -20,11 +20,7 @@ This code is utilized to estimate gas phase TiO<sub>2</sub> nanoclusters (less t
 * Download or clone this repository.
 
 ## 4. Usage
-<<<<<<< HEAD
 Two directories, `NN_training` and `NN_learned`, store the code for neural network training process and calculation of collision rate coefficient via early trained neural network model.  To calculate collision rate coefficient, first you set the parameters (temperature, 1st and 2nd clusters diameters) at 6th-8th rows in `NN_learned/main.py` and run `NN_learned/main.py` code, displaying the collision rate coefficient ($\beta_{ij}$ and $\eta_{ij}$) on your console.
-=======
-Set parameters (temperature, 1st and 2nd clusters diameters) in `main.py` and run `main.py`, displaying the collision rate coefficienct, $\beta_{ij}$ and enhancement factor, $\eta_{ij}$ on your console.
->>>>>>> a6156bc2aa05c66c82b7f91864b5bf93bb64653e
 
 ## 5. Documentation
 **Under construction...**
