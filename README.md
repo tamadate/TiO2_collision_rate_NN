@@ -23,7 +23,7 @@ This code is utilized to estimate gas phase TiO<sub>2</sub> nanoclusters (less t
 Two directories, `NN_training` and `NN_learned` respectively store the codes for neural network training process and trained neural network model.  Running trained neural network model `main.py` in `NN_learned` directory with arbitrary calculation parameters (temperature, 1st and 2nd clusters diameters) return the collision rate coefficient, $\beta_{ij}$ and enhancement factor, $\eta_{ij}$ on your console.  The detail usage is shown in documentation.
 
 ## 5. Documentation
-**Under construction...**
+**Under construction....**
 
 ## 6. License
 This code is an open-source package, meaning you can use or modify it under the terms and conditions of the GPL-v3 licence. You should have received a copy along with this package, if not please refer to [https://www.gnu.org/licenses/](https://www.gnu.org/licenses/).
