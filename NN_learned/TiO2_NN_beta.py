@@ -45,11 +45,23 @@ class TiO2:
     varray=np.arange(vmin,vmin+dv*Nb,dv)
     ps=np.zeros((Nb,Nv))
 
-    def calculatePNN(self,n1,n2,b,v):
+    def calculatePNN(self,N1,N2,b,v):
+        if(N1>N2):
+            n1=N2
+            n2=N1
+        else:
+            n1=N1
+            n2=N2            
         calTensor=torch.tensor([[float(n1),float(n2),float(b),float(v)]])
         return torch.max(TiO2.model(calTensor),1)[1].tolist()
 
-    def calculateBetaNN(self,n1,n2,T):
+    def calculateBetaNN(self,N1,N2,T):
+        if(N1>N2):
+            n1=N2
+            n2=N1
+        else:
+            n1=N1
+            n2=N2    
         n=np.array((n1,n2))
         m=n/3.0*self.Mmono				# Molar mass of clusters [kg/mol]
         self.mij=m[0]*m[1]/(m[0]+m[1])		# Reduced molar mass [kg/mol]

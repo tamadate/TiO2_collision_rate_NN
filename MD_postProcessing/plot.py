@@ -138,22 +138,22 @@ class plot():
         cm=plt.get_cmap("Greys")
         dashList = [(1,0),(5,5),(10,5),(15,5),(5,2,10,2)]
         resolution=1
-        f=open(MD.dpString[MD.n1]+"_beta.dat","w")
-        for n22 in np.arange(MD.Nsize/resolution):
-            n2=int(n22*resolution)
+        #f=open(MD.dpString[MD.n1]+"_beta.dat","w")
+        for n22 in np.arange(MD.Nsize*0.333):
+            n2=int(n22*3)
             betas=np.zeros(Tsize)
             for i in np.arange(Tsize):
                 MD.tempSet(tempArray[i])
                 betas[i]=MD.beta(n2)
-                f.write(str(MD.dpSize[MD.n1])+"\t"+str(MD.dpSize[n2])+"\t"+str(betas[i])+"\t"+str(MD.T)+"\n")
-            #axs.plot(tempArray,betas,label=str(MD.dpString[n2]),color=cm(n22*0.15+0.4),linewidth=0.8,linestyle='--', dashes=dashList[int(n22)])
-        f.close()
+                #f.write(str(MD.dpSize[MD.n1])+"\t"+str(MD.dpSize[n2])+"\t"+str(betas[i])+"\t"+str(MD.T)+"\n")
+            axs.plot(tempArray,betas,label=str(MD.dpString[n2]),color=cm(n22*0.15+0.4),linewidth=0.8,linestyle='--', dashes=dashList[int(n22)])
+        #f.close()
         axs.set_xlim([Tlow,Thigh])
         axs.set_xlabel("Temperature [K]",size=15)
-        axs.set_ylabel(r"Coagulation rate coefficient, $\beta _{ij}$ [m$^3$ s$^ {-1}$]",size=15)
+        axs.set_ylabel(r"Coagulation rate coefficient, $\beta _{ij}$ [m$^3$ s$^{-1}$]",size=15)
         plt.ticklabel_format(style='sci', axis='y', useMathText=True)
         #plt.legend()
-        plt.savefig(self.saveLoc+MD.dpString[MD.n1]+"Beta.png", dpi=1000)
+        plt.savefig(MD.dpString[MD.n1]+"Beta.png", dpi=1000)
         plt.show()
 #*******************************************************************************
 ## --------------   Enhancement facto as function of temp.   -------------- ##
@@ -179,5 +179,5 @@ class plot():
         axs.set_xlabel("Temperature [K]",size=15)
         axs.set_ylabel(r"Enhancement factor, $\eta_{ij}$ [-]",size=15)
         #plt.legend()
-        plt.savefig(self.saveLoc+MD.dpString[MD.n1]+"Enhance.png", dpi=1000)
+        plt.savefig(MD.dpString[MD.n1]+"Enhance.png", dpi=1000)
         plt.show()
