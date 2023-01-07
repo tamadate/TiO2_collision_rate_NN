@@ -9,11 +9,13 @@ $$
 where, $\bar{v}{\_{ij}}$ is nanoclusters relative mean thermal speed and $A\_{ij}$ is the nanoclustes collision cross section which is described:
 
 $$
-\bar{v}_{ij}=\sqrt{\frac{8k_{b}T}{\pi m_{ij}}}\\
-A_{ij}=\pi a_{ij}^2
+\begin{aligned}
+\bar{v}_{ij}&=\sqrt{\frac{8k_{b}T}{\pi m_{ij}}}\\
+A_{ij}&=\pi a_{ij}^2
+\end{aligned}
 $$
 
-where, $k_{b}$ is the Boltzumann constant, T is the temperature, $m_{ij}$ is the reduced mass $(\frac{1}{m_{ij}}=\frac{1}{m_{i}}+\frac{1}{m_{i}})$, and  $a\_{ij}$  is the collision distance $(a_{ij}=\frac{D_{p,i}+D_{p,j}}{2})$. When the nanoclusters are spherical, its masses, ${m_{i}}$ and ${m_{j}}$ are described to $\rho \frac{\pi D_{p,i}^3}{6}$ and $\rho \frac{\pi D_{p,j}^3}{6}$ with the nanocluster density, $\rho$. Substituting above equaitons into first equation yields:
+where, $k_{b}$ is the Boltzumann constant, T is the temperature, $m_{ij}$ is the reduced mass $\left(\frac{1}{m_{ij}}=\frac{1}{m_{i}}+\frac{1}{m_{i}}\right)$, and  $a\_{ij}$  is the collision distance $\left(a_{ij}=\frac{D_{p,i}+D_{p,j}}{2}\right)$. When the nanoclusters are spherical, its masses, ${m_{i}}$ and ${m_{j}}$ are described to $\rho \frac{\pi D_{p,i}^3}{6}$ and $\rho \frac{\pi D_{p,j}^3}{6}$ with the nanocluster density, $\rho$. Substituting above equaitons into first equation yields:
 
 $$
 \begin{aligned}
