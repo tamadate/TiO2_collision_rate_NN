@@ -71,7 +71,7 @@ $$
 Figue 1 displays $\zeta_{ij}=\left(\frac{D_{p,j}}{D_{p,i}}\right)^3+\frac{1}{4}-\frac{3D_{p,i}}{4D_{p,j}}$ and $\beta_{ij}$ as a function of the particle size ratio.
 
 ![Figure 1](./Figure1.png)
-*Figure 1. $\zeta_{ij}$ (upper panel) and $\beta_{ij}$ (lower panel) as a function of the nanocluster size ratio.  The evaluation function, $\zeta_{ij}$, is converged to 0 at $\frac{D_{p,j}}{D_{p,i}}=0.856$.  The coagulation rate coefficient, $\beta_{ij}$, also displays local minimum at this nanolculster size ratio.*
+**Figure 1.** $\zeta_{ij}$ (upper panel) and $\beta_{ij}$ (lower panel) as a function of the nanocluster size ratio.  The evaluation function, $\zeta_{ij}$, is converged to 0 at $\frac{D_{p,j}}{D_{p,i}}=0.856$.  The coagulation rate coefficient, $\beta_{ij}$, also displays local minimum at this nanolculster size ratio.
 
 
 
