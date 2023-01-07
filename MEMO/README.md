@@ -13,7 +13,7 @@ $$
 A_{ij}=\pi a_{ij}^2
 $$
 
-where, $k_{b}$ is the Boltzumann constant, T is the temperature, $m_{ij}$ is the reduced mass ($\frac{1}{m_{ij}}$=$\frac{1}{m_{i}}+\frac{1}{m_{i}}$), and  $a_{ij}$  is the collision distance ($a_{ij}=\frac{D_{p,i}+D_{p,j}}{2}$). When the nanoclusters are spherical, its masses, ${m_{i}}$ and ${m_{j}}$ are described to $\rho \frac{\pi D_{p,i}^3}{6}$ and $\rho \frac{\pi D_{p,j}^3}{6}$ with the nanocluster density, $\rho$. Substituting above equaitons into first equation yields:
+where, $k_{b}$ is the Boltzumann constant, T is the temperature, $m_{ij}$ is the reduced mass ($\frac{1}{m\_{ij}}$=$\frac{1}{m\_{i}}+\frac{1}{m\_{i}}$), and  $a\_{ij}$  is the collision distance ($a_{ij}=\frac{D_{p,i}+D_{p,j}}{2}$). When the nanoclusters are spherical, its masses, ${m_{i}}$ and ${m_{j}}$ are described to $\rho \frac{\pi D_{p,i}^3}{6}$ and $\rho \frac{\pi D_{p,j}^3}{6}$ with the nanocluster density, $\rho$. Substituting above equaitons into first equation yields:
 
 $$
 \begin{aligned}
@@ -38,7 +38,7 @@ $$
     \left(\frac{1}{D_{p,i}^3}+\frac{1}{D_{p,j}^3}\right)\\
     &=
     2\left(D_{p,i}+D_{p,j}\right)
-    \sqrt{\frac{3k_{b}T}{\rho}\left(\frac{1}{D_{p,i}^3}+\frac{1}{D_{p,j}^3}\right)} 
+    \sqrt{\frac{3k_{b}T}{\rho}\left(\frac{1}{D_{p,i}^3}+\frac{1}{D_{p,j}^3}\right)}
     -
     \frac{3\left(D_{p,i}+D_{p,j}\right)^2}{2D_{p,j}^4}
     \sqrt{\frac{3k_{b}T}{\rho}}\left(\frac{1}{D_{p,i}^3}+\frac{1}{D_{p,j}^3}\right)^{-1/2}
@@ -49,7 +49,7 @@ The local minimum is obtained when the derivative is equal to zero ($\frac{\part
 
 $$
     2\left(D_{p,i}+D_{p,j}\right)
-    \sqrt{\frac{3k_{b}T}{\rho}\left(\frac{1}{D_{p,i}^3}+\frac{1}{D_{p,j}^3}\right)} 
+    \sqrt{\frac{3k_{b}T}{\rho}\left(\frac{1}{D_{p,i}^3}+\frac{1}{D_{p,j}^3}\right)}
     -
     \frac{3\left(D_{p,i}+D_{p,j}\right)^2}{2D_{p,j}^4}
     \sqrt{\frac{3k_{b}T}{\rho}}\left(\frac{1}{D_{p,i}^3}+\frac{1}{D_{p,j}^3}\right)^{-1/2}=0\\
@@ -72,6 +72,3 @@ Figue 1 displays $\zeta_{ij}=\left(\frac{D_{p,j}}{D_{p,i}}\right)^3+\frac{1}{4}-
 
 ![Figure 1](./Figure1.png)
 **Figure 1.** $\zeta_{ij}$ (upper panel) and $\beta_{ij}$ (lower panel) as a function of the nanocluster size ratio.  The evaluation function, $\zeta_{ij}$, is converged to 0 at $\frac{D_{p,j}}{D_{p,i}}=0.856$.  The coagulation rate coefficient, $\beta_{ij}$, also displays local minimum at this nanolculster size ratio.
-
-
-
