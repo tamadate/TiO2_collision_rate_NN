@@ -1,10 +1,6 @@
-NN_learned/betaMap1200.png
-NN_learned/enhanceMap1200.png
-NN_learned/MDNN_beta_1000.png
-NN_learned/MDNN_beta_1500.png
-NN_learned/MDNN_beta_300.png
-NN_learned/MDNN.png
-NN_learned/probabilityMap.png
+*/*.png
+*/*/*.png
+*/*/*.DAT
 .ipynb_checkpoints/*
 */.ipynb_checkpoints/*
 */__pycache__/*
