@@ -58,12 +58,14 @@ $$
 Deviding this equation with $2\left(D_{p,i}+D_{p,j}\right)\sqrt{\frac{3k_{b}T}{\rho}}$ and multiplying $\sqrt{\left(\frac{1}{D_{p,i}^3}+\frac{1}{D_{p,j}^3}\right)}$ yields:
 
 $$
+\begin{aligned}
     \left(\frac{1}{D_{p,i}^3}+\frac{1}{D_{p,j}^3}\right)-
-    \frac{3\left(D_{p,i}+D_{p,j}\right)}{4D_{p,j}^4}=0\\
+    \frac{3\left(D_{p,i}+D_{p,j}\right)}{4D_{p,j}^4}&=0\\
     \left(\frac{D_{p,j}^3}{D_{p,i}^3}+1\right)-
-    \frac{3\left(D_{p,i}+D_{p,j}\right)}{4D_{p,j}}=0\\
+    \frac{3\left(D_{p,i}+D_{p,j}\right)}{4D_{p,j}}&=0\\
     \left(\frac{D_{p,j}}{D_{p,i}}\right)^3+\frac{1}{4}-
-    \frac{3D_{p,i}}{4D_{p,j}}=0
+    \frac{3D_{p,i}}{4D_{p,j}}&=0
+\end{aligned}
 $$
 
 Figue 1 displays $\zeta_{ij}=\left(\frac{D_{p,j}}{D_{p,i}}\right)^3+\frac{1}{4}-\frac{3D_{p,i}}{4D_{p,j}}$ and $\beta_{ij}$ as a function of the particle size ratio.
