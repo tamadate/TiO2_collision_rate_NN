@@ -6,7 +6,7 @@ $$
 \beta_{ij}=\bar{v}_{ij}A_{ij}
 $$
 
-where, $\bar{v}_{ij}$ is nanoclusters relative mean thermal speed and $A_{ij}$ is the nanoclustes collision cross section which is described:
+where, $\bar{v}{\_{ij}}$ is nanoclusters relative mean thermal speed and $A\_{ij}$ is the nanoclustes collision cross section which is described:
 
 $$
 \bar{v}_{ij}=\sqrt{\frac{8k_{b}T}{\pi m_{ij}}}\\
