@@ -13,7 +13,7 @@ $$
 A_{ij}=\pi a_{ij}^2
 $$
 
-where, $k_{b}$ is the Boltzumann constant, T is the temperature, $m_{ij}$ is the reduced mass $( \frac{1}{m_{ij}}$=$\frac{1}{m_{i}}+\frac{1}{m_{i}})$, and  $a\_{ij}$  is the collision distance $(a_{ij}=\frac{D_{p,i}+D_{p,j}}{2})$. When the nanoclusters are spherical, its masses, ${m_{i}}$ and ${m_{j}}$ are described to $\rho \frac{\pi D_{p,i}^3}{6}$ and $\rho \frac{\pi D_{p,j}^3}{6}$ with the nanocluster density, $\rho$. Substituting above equaitons into first equation yields:
+where, $k_{b}$ is the Boltzumann constant, T is the temperature, $m_{ij}$ is the reduced mass $(\frac{1}{m_{ij}}=\frac{1}{m_{i}}+\frac{1}{m_{i}})$, and  $a\_{ij}$  is the collision distance $(a_{ij}=\frac{D_{p,i}+D_{p,j}}{2})$. When the nanoclusters are spherical, its masses, ${m_{i}}$ and ${m_{j}}$ are described to $\rho \frac{\pi D_{p,i}^3}{6}$ and $\rho \frac{\pi D_{p,j}^3}{6}$ with the nanocluster density, $\rho$. Substituting above equaitons into first equation yields:
 
 $$
 \begin{aligned}
@@ -45,7 +45,7 @@ $$
 \end{aligned}
 $$
 
-The local minimum is obtained when the derivative is equal to zero ($\frac{\partial \beta_{ij}}{\partial D_{p,j}}=0$), hence below relation is able to be yielded:
+The local minimum is obtained when the derivative is equal to zero $(\frac{\partial \beta_{ij}}{\partial D_{p,j}}=0)$, hence below relation is able to be yielded:
 
 $$
     2\left(D_{p,i}+D_{p,j}\right)
