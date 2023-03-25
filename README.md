@@ -29,7 +29,7 @@ Two directories, `NN_training` and `NN_learned` respectively store the codes for
 This code is an open-source package, meaning you can use or modify it under the terms and conditions of the GPL-v3 licence. You should have received a copy along with this package, if not please refer to [https://www.gnu.org/licenses/](https://www.gnu.org/licenses/).
 
 ## 7. Reference
-**Under construction...**
+[https://aip.scitation.org/doi/abs/10.1063/5.0136592](Tamadate, T., Yang, S., & Hogan, C. J., Jr. (2023). A neural network parametrized coagulation rate model for <3 nm titanium dioxide nanoclusters. Journal of Chemical Physics, 158(8) doi:10.1063/5.0136592 )
 
 # Author
 * Dr. Tomoya Tamadate
